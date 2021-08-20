@@ -1,7 +1,9 @@
 package Fabrica;
 
+import Interface.iMesa;
 import Interface.iSilla;
 import Interface.iSillon;
+import Modelo.Mesa_Oficina;
 import Modelo.Silla_Oficina;
 import Modelo.Sillon_Oficina;
 
@@ -22,6 +24,16 @@ public class Fabrica_Oficina extends Fabrica_Abstracta {
 		
 		if (tipoSillon.equalsIgnoreCase("SILLA")) {
 			return new Sillon_Oficina();
+		}
+		
+		return null;
+	}
+
+	@Override
+	public iMesa getiMesa(String tipoMesa) {
+		
+		if (tipoMesa.equalsIgnoreCase("MESA")) {
+			return new Mesa_Oficina();
 		}
 		
 		return null;
